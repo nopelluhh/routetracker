@@ -1,6 +1,6 @@
 class main {
     constructor() {
-        this.template = `<app-header></app-header><span><h1>{{$ctrl.tagline}}</h1></span>`
+        this.templateUrl = '/templates/main' //`<app-header></app-header><span><h1>{{$ctrl.tagline}}</h1></span>`
     }
 
     controller() {

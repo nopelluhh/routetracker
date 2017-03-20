@@ -15,17 +15,23 @@ var _angular = __webpack_require__(0);
 
 var _angular2 = _interopRequireDefault(_angular);
 
-var _utils = __webpack_require__(4);
+var _utils = __webpack_require__(5);
 
-var _main = __webpack_require__(3);
+var _main = __webpack_require__(4);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var app = exports.app = _angular2.default.module('app', []).component('main', (0, _utils.makeComponent)(_main.main));
 
 /***/ }),
-/* 2 */,
-/* 3 */
+/* 2 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 3 */,
+/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -43,7 +49,7 @@ var main = function () {
     function main() {
         _classCallCheck(this, main);
 
-        this.template = '<app-header></app-header><span><h1>{{$ctrl.tagline}}</h1></span>';
+        this.templateUrl = '/templates/main'; //`<app-header></app-header><span><h1>{{$ctrl.tagline}}</h1></span>`
     }
 
     _createClass(main, [{
@@ -59,7 +65,7 @@ var main = function () {
 exports.main = main;
 
 /***/ }),
-/* 4 */
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -87,7 +93,12 @@ function makeDirective(ClassName) {
 }
 
 /***/ }),
-/* 5 */
+/* 6 */,
+/* 7 */,
+/* 8 */,
+/* 9 */,
+/* 10 */,
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -101,6 +112,8 @@ var _app = __webpack_require__(1);
 
 var _app2 = _interopRequireDefault(_app);
 
+__webpack_require__(2);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 _angular2.default.element(document).ready(function () {
@@ -108,4 +121,4 @@ _angular2.default.element(document).ready(function () {
 });
 
 /***/ })
-],[5]);
+],[11]);

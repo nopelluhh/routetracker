@@ -4,9 +4,7 @@ import {
     makeDirective
 } from './utils.js'
 
-import {
-    main
-} from './components/main'
+import { main } from './components/main/main'
 
 export const app = angular.module('app', [])
     .component('main', makeComponent(main))
