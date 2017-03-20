@@ -1,0 +1,37 @@
+{
+  "name": "routetracker",
+  "version": "0.1.0",
+  "description": "for tracking routes",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nopelluhh/routetracker.git"
+  },
+  "author": "noah peller",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nopelluhh/routetracker/issues"
+  },
+  "homepage": "https://github.com/nopelluhh/routetracker#readme",
+  "dependencies": {
+    "angular": "^1.6.3",
+    "babel": "^6.23.0",
+    "babel-preset-latest": "^6.24.0",
+    "body-parser": "^1.17.1",
+    "dotenv": "^4.0.0",
+    "eslint": "^3.18.0",
+    "express": "^4.15.2",
+    "gulp-concat": "^2.6.1",
+    "method-override": "^2.3.7",
+    "mongoose": "^4.9.1",
+    "webpack": "^2.2.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.24.0",
+    "babel-loader": "^6.4.1",
+    "nodemon": "^1.11.0"
+  }
+}
