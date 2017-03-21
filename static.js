@@ -1,20 +1,20 @@
 const express = require('express')
 const app = express()
 const path = require('path')
-const static = express.static
+const eStatic = express.static
 
 module.exports = app
 
-app.use('/assets/js', static(path.join(__dirname, 'build/js')))
+app.use('/assets/js', eStatic(path.join(__dirname, 'build/js')))
 
 app.use('/templates/:slug', (req, res) => {
-    const url = `public/components/${req.params.slug}/${req.params.slug}.html`
-
+    const slug = req.params.slug
+    const url = `public/components/${slug}/${slug}.html`
     res.sendFile(url, {
         root: __dirname
     })
 })
 
-app.get('/', (req, res) => res.sendFile('public/index.html', {
+app.get('/*', (req, res) => res.sendFile('public/index.html', {
     root: __dirname
 }))

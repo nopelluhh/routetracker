@@ -1,12 +1,11 @@
 const router = require('express').Router()
 const fs = require('fs')
-const path = require('path')
-const routes = fs.readdirSync(path.join(__dirname, 'routes'))
+const pathUtil = require('path')
+const routes = fs.readdirSync(pathUtil.join(__dirname, 'routes')).map(path => '/' + path.slice(0, -3))
 
 routes.forEach(route => {
-    let path = `/${route}`.slice(0, -3)
-    let routing = require(`./routes${path}`)
-    router.use(path, routing)
+    let routing = require('./routes' + route)
+    router.use('/api' + route, routing)
 })
 
 module.exports = router
