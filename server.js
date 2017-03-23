@@ -4,7 +4,7 @@ const app = express()
 const bodyParser = require('body-parser')
 const methodOverride = require('method-override')
 const mongoose = require('mongoose')
-const port = process.env.port || 8081
+const port = process.env.PORT || 8081
 const path = require('path')
 const routes = require('./app/routes')
 
