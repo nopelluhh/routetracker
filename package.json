@@ -1,51 +1,51 @@
 {
-  "name": "routetracker",
-  "version": "0.1.0",
-  "description": "for tracking routes",
-  "main": "server.js",
-  "scripts": {
-    "heroku-postbuild": "webpack -p --progress",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/nopelluhh/routetracker.git"
-  },
-  "author": "noah peller",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/nopelluhh/routetracker/issues"
-  },
-  "homepage": "https://github.com/nopelluhh/routetracker#readme",
-  "dependencies": {
-    "angular": "^1.6.3",
-    "angular-template-url-loader": "^1.0.2",
-    "angular-ui-router": "next",
-    "babel": "^6.23.0",
-    "babel-preset-latest": "^6.24.0",
-    "body-parser": "^1.17.1",
-    "bootstrap-sass": "^3.3.7",
-    "css-loader": "^0.27.3",
-    "dotenv": "^4.0.0",
-    "eslint": "^3.18.0",
-    "express": "^4.15.2",
-    "express-session": "^1.15.1",
-    "extract-text-webpack-plugin": "^2.1.0",
-    "file-loader": "^0.10.1",
-    "gulp-concat": "^2.6.1",
-    "html-loader": "^0.4.5",
-    "import-glob-loader": "^1.1.0",
-    "method-override": "^2.3.7",
-    "mongoose": "^4.9.1",
-    "node-sass": "^4.5.0",
-    "raw-loader": "^0.5.1",
-    "sass-loader": "^6.0.3",
-    "url-loader": "^0.5.8",
-    "webpack": "^2.2.1"
-  },
-  "devDependencies": {
-    "babel-core": "^6.24.0",
-    "babel-loader": "^6.4.1",
-    "nodemon": "^1.11.0"
-  }
+    "name": "routetracker",
+    "version": "0.1.0",
+    "description": "for tracking routes",
+    "main": "server.js",
+    "scripts": {
+        "heroku-postbuild": "webpack -p --progress",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/nopelluhh/routetracker.git"
+    },
+    "author": "noah peller",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/nopelluhh/routetracker/issues"
+    },
+    "homepage": "https://github.com/nopelluhh/routetracker#readme",
+    "dependencies": {
+        "angular": "^1.6.3",
+        "angular-template-url-loader": "^1.0.2",
+        "angular-ui-router": "next",
+        "babel-preset-latest": "^6.24.0",
+        "body-parser": "^1.17.1",
+        "bootstrap-sass": "^3.3.7",
+        "css-loader": "^0.27.3",
+        "dotenv": "^4.0.0",
+        "eslint": "^3.18.0",
+        "express": "^4.15.2",
+        "express-session": "^1.15.1",
+        "extract-text-webpack-plugin": "^2.1.0",
+        "file-loader": "^0.10.1",
+        "gulp-concat": "^2.6.1",
+        "html-loader": "^0.4.5",
+        "import-glob-loader": "^1.1.0",
+        "method-override": "^2.3.7",
+        "mongoose": "^4.9.1",
+        "node-sass": "^4.5.0",
+        "raw-loader": "^0.5.1",
+        "sass-loader": "^6.0.3",
+        "url-loader": "^0.5.8",
+        "webpack": "^2.2.1"
+    },
+    "devDependencies": {
+        "babel": "^6.23.0",
+        "babel-core": "^6.24.0",
+        "babel-loader": "^6.4.1",
+        "nodemon": "^1.11.0"
+    }
 }
