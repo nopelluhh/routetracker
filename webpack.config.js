@@ -22,9 +22,9 @@ module.exports = {
             }
         }), extractSass
     ],
-    // resolveLoader: {
-    //     root: path.join(__dirname, 'node_modules')
-    // },
+    resolveLoader: {
+        modules: [path.join(__dirname, 'node_modules')]
+    },
     module: {
         rules: [
             // preloaders
