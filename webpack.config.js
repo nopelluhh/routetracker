@@ -1,11 +1,14 @@
 const path = require('path')
 const webpack = require('webpack')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const fs = require('fs')
 
 const extractSass = new ExtractTextPlugin({
     filename: '[name].css',
     disable: process.env.NODE_ENV === 'development'
 })
+
+console.log(fs.readdirSync('.'))
 
 module.exports = {
     entry: path.resolve(__dirname, './public/main.js'),
