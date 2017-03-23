@@ -1,11 +1,11 @@
-const path = require('path');
+const path = require('path')
 const webpack = require('webpack')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 const extractSass = new ExtractTextPlugin({
-    filename: "[name].css",
-    disable: process.env.NODE_ENV === "development"
-});
+    filename: '[name].css',
+    disable: process.env.NODE_ENV === 'development'
+})
 
 module.exports = {
     entry: './public/main.js',
@@ -18,15 +18,18 @@ module.exports = {
             name: 'vendor',
             minChunks: function(module) {
                 // this assumes your vendor imports exist in the node_modules directory
-                return module.context && module.context.indexOf('node_modules') !== -1;
+                return module.context && module.context.indexOf('node_modules') !== -1
             }
         }), extractSass
     ],
+    // resolveLoader: {
+    //     root: path.join(__dirname, 'node_modules')
+    // },
     module: {
         rules: [
             // preloaders
             {
-                enforce: "pre",
+                enforce: 'pre',
                 test: /\.scss/,
                 loader: 'import-glob-loader'
             },
@@ -45,26 +48,26 @@ module.exports = {
                 test: /\.scss$/,
                 use: extractSass.extract({
                     use: [{
-                        loader: "css-loader"
+                        loader: 'css-loader'
                     }, {
-                        loader: "sass-loader",
+                        loader: 'sass-loader',
                         options: {
-                            includePaths: [path.resolve(__dirname, "./node_modules")]
+                            includePaths: [path.resolve(__dirname, './node_modules')]
                         }
                     }]
                 })
             }, {
                 test: /\.woff[2]?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-                loader: "url-loader?limit=10000&minetype=application/font-woff"
+                loader: 'url-loader?limit=10000&minetype=application/font-woff'
             },
             {
                 test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-                loader: "file-loader"
+                loader: 'file-loader'
             }, {
                 test: /\.html$/,
-                loader: "raw-loader"
+                loader: 'raw-loader'
             }
         ]
     }
 
-};
+}

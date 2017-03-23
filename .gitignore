@@ -58,9 +58,7 @@ typings/
 # dotenv environment variables file
 .env
 
-#dsstore
-
+# dsstore
 .DS_Store
 
 #webpack built
-build/
