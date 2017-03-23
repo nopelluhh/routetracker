@@ -4,7 +4,8 @@ export {
 }
 
 function makeComponent(ClassName) {
-    return new ClassName()
+    let comp = new ClassName()
+    return comp
 }
 
 function makeDirective(ClassName) {

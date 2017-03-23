@@ -1,8 +1,25 @@
 .rt-content {
-    width: 100%;
-    padding: 10px;
-    @media (min-width: $screen-sm) {
-        margin-left: 200px;
-        padding: 0 20px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 45px;
+    padding-right: 45px;
+    @media (min-width: 1000px) {
+        width: 720px;
     }
+    @media (min-width: 1080px) {
+        width: 800px;
+    }
+    @media (min-width: 1280px) {
+        width: 1000px;
+    }
+}
+
+.rt-content:before,
+.rt-content:after {
+    content: " ";
+    display: table;
+}
+
+.rt-content:after {
+    clear: both;
 }

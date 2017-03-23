@@ -3,8 +3,7 @@ const Schema = mongoose.Schema
 
 const Boulder = new Schema({
     name: {
-        type: String,
-        require: true
+        type: String
     },
     grade: {
         type: Number
@@ -12,8 +11,20 @@ const Boulder = new Schema({
     color: {
         type: String
     },
-    location: {
+    gym: {
         type: String
+        // type: Schema.Types.ObjectId,
+        // ref: 'gym'
+    },
+    wall: {
+        type: String
+        // type: Schema.Types.ObjectId,
+        // ref: 'wall'
+    }, 
+    setter: {
+        type: String
+        // type: Schema.Types.ObjectId,
+        // ref: 'user'
     }
 }, {
     timestamps: {

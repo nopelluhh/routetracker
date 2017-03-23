@@ -1,10 +1,8 @@
-import './fetcher'
 
-fetcher.factory('fetcher', fetchServiceFactory)
 
-fetchServiceFactory.$inject = ['$http']
+fetcherService.$inject = ['$http']
 
-function fetchServiceFactory($http) {
+export function fetcherService($http) {
     const prefix = '/api/'
     return {
         get
@@ -12,6 +10,7 @@ function fetchServiceFactory($http) {
 
     function get(resource, params) {
         return $http.get(prefix + resource + paramToQuery(params))
+            .then(res => res.data)
     }
 
     function create(resource, data) {
@@ -21,6 +20,8 @@ function fetchServiceFactory($http) {
     // utilities
 
     function paramToQuery(obj) {
+        if(!obj) return ''
+
         return '?' +
             Object.keys(obj).map(function(key) {
                 return encodeURIComponent(key) + '=' +

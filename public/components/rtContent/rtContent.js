@@ -5,7 +5,6 @@ class rtContent {
 
     controller() {
         let vm = this
-
         vm.tagline = "Hey! You've made it!"
     }
 }

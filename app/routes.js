@@ -8,4 +8,8 @@ routes.forEach(route => {
     router.use('/api' + route, routing)
 })
 
+router.get('/*', (req, res) => res.sendFile('public/index.html', {
+    root: pathUtil.join(__dirname, '../')
+}))
+
 module.exports = router

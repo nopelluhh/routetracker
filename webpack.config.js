@@ -23,11 +23,15 @@ module.exports = {
         }), extractSass
     ],
     module: {
-        rules: [{
+        rules: [
+            // preloaders
+            {
                 enforce: "pre",
                 test: /\.scss/,
                 loader: 'import-glob-loader'
             },
+
+            // loaders
             {
                 test: /\.js$/,
                 exclude: /(node_modules|public\/libs)/,
@@ -56,6 +60,9 @@ module.exports = {
             {
                 test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
                 loader: "file-loader"
+            }, {
+                test: /\.html$/,
+                loader: "raw-loader"
             }
         ]
     }

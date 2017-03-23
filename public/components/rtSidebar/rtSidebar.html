@@ -1,7 +1,6 @@
 <div class="rt-sidebar p10" ng-class="{'slide-in': $ctrl.hideMenu}">
     <a ng-click="$ctrl.hideMenu = !$ctrl.hideMenu" class="hide-menu"><i class="glyphicon glyphicon-circle-arrow-left" ng-class="{one80: $ctrl.hideMenu}"></i></a>
     <ul class="list-unstyled">
-        <li ng-repeat="item in $ctrl.menu"><a ui-state="{{item.sref}}" class="sidebar-link"><i class="glyphicon {{item.icon}}"></i> {{item.name}}</a></li>
+        <li ng-repeat="item in ::$ctrl.menu"><a ui-state="item.sref" class="sidebar-link"><i class="glyphicon {{item.icon}}"></i> {{item.name}}</a></li>
     </ul>
-
 </div>

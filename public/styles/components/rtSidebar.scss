@@ -1,24 +1,20 @@
 .rt-sidebar {
+    z-index: 1000;
     position: fixed;
     width: 150px;
     left: 0px;
     border-radius: 0 15px 15px 0;
-    background-color: $gray-dark;
+    background-color: rgba(0, 0, 0, 0.8);
     transition: all 0.2s ease-in;
-    @media (max-width: $screen-sm) {
-        left: -126px;
-    }
     ul {
         padding: 0px 5px;
         margin: 0
     }
     .sidebar-link {
         text-decoration: none;
-        font-weight: 300;
+        font-weight: 500;
         font-size: 1.3em;
         color: white;
-        padding: 4px 0;
-        display: block;
         &:hover {
             color: $brand-primary
         }
@@ -35,5 +31,5 @@
 }
 
 .one80 {
-    transform: rotate(180);
+    transform: rotate(180deg);
 }

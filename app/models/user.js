@@ -9,6 +9,10 @@ const User = new Schema({
     gym: {
         type: Schema.Types.ObjectId,
         ref: 'gym'
+    },
+    role: {
+        type: String,
+        enum: ['setter', 'head', 'admin']
     }
 }, {
     timestamps: {

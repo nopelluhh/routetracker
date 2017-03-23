@@ -7,10 +7,19 @@ export function states($stateProvider, $locationProvider) {
         name: 'rt.bouldering',
         url: '/',
         component: 'dummy'
+    }, {
+        name: 'rt.gyms',
+        url: '/gyms',
+        resolve: {
+            gyms: (fetcherService) => {
+                return fetcherService.get('gyms')
+            }
+        },
+        component: 'gymList'
+
     }]
 
     states.forEach((state) => {
-        console.log(state)
         $stateProvider.state(state)
     })
 

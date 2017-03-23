@@ -15,8 +15,14 @@ const Gym = new Schema({
         ref: 'boulder'
     },
     walls: {
-        rope: [String],
-        boulder: [String]
+        rope: [{
+            type: Schema.Types.ObjectId,
+            ref: 'wall'
+        }],
+        boulder: [{
+            type: Schema.Types.ObjectId,
+            ref: 'wall'
+        }]
     }
 })
 
