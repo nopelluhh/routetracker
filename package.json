@@ -40,12 +40,12 @@
         "raw-loader": "^0.5.1",
         "sass-loader": "^6.0.3",
         "url-loader": "^0.5.8",
-        "webpack": "^2.2.1"
-    },
-    "devDependencies": {
+        "webpack": "^2.2.1",
         "babel": "^6.23.0",
         "babel-core": "^6.24.0",
-        "babel-loader": "^6.4.1",
+        "babel-loader": "^6.4.1"
+    },
+    "devDependencies": {
         "nodemon": "^1.11.0"
     }
 }
