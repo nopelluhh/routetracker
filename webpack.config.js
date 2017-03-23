@@ -8,7 +8,7 @@ const extractSass = new ExtractTextPlugin({
     disable: process.env.NODE_ENV === 'development'
 })
 
-console.log(fs.readdirSync('./node_modules/babel-loader'))
+console.log(fs.readdirSync('./node_modules'))
 
 module.exports = {
     entry: path.resolve(__dirname, './public/main.js'),
