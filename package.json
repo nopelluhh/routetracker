@@ -21,6 +21,9 @@
         "angular": "^1.6.3",
         "angular-template-url-loader": "^1.0.2",
         "angular-ui-router": "next",
+        "babel": "^6.23.0",
+        "babel-core": "^6.24.0",
+        "babel-loader": "^6.4.1",
         "babel-preset-latest": "^6.24.0",
         "body-parser": "^1.17.1",
         "bootstrap-sass": "^3.3.7",
@@ -36,14 +39,12 @@
         "import-glob-loader": "^1.1.0",
         "method-override": "^2.3.7",
         "mongoose": "^4.9.1",
+        "ng-annotate-loader": "^0.2.0",
         "node-sass": "^4.5.0",
         "raw-loader": "^0.5.1",
         "sass-loader": "^6.0.3",
         "url-loader": "^0.5.8",
-        "webpack": "^2.2.1",
-        "babel": "^6.23.0",
-        "babel-core": "^6.24.0",
-        "babel-loader": "^6.4.1"
+        "webpack": "^2.2.1"
     },
     "devDependencies": {
         "nodemon": "^1.11.0"

@@ -2,7 +2,7 @@ export function setScreen() {
     return {
         restrict: 'A',
         scope: {},
-        controller: function($rootScope, $window) {
+        controller: ['$rootScope', '$window', function($rootScope, $window) {
             let breakpoints = [0, 768, 992, 1200, Infinity]
             let labels = ['xs', 'sm', 'md', 'lg']
             $window.onresize = debounce(listener, 250)
@@ -37,6 +37,6 @@ export function setScreen() {
             function between(a, b, c) {
                 return a >= b && a < c
             }
-        }
+        }]
     }
 }

@@ -5,6 +5,7 @@ export {
 
 function makeComponent(ClassName) {
     let comp = new ClassName()
+    comp.controller.$inject
     return comp
 }
 

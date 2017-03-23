@@ -6,7 +6,7 @@ class gymList {
         }
     }
 
-    controller(fetcherService) {
+    controller() {
         let vm = this
     }
 }

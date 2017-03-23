@@ -1,9 +1,10 @@
 class rtSidebar {
     constructor() {
-        this.templateUrl = '/templates/rtSidebar' //`<app-header></app-header><span><h1>{{$ctrl.tagline}}</h1></span>`
+        this.templateUrl = '/templates/rtSidebar' 
     }
 
     controller($scope, $rootScope, $window) {
+        'ngInject'
         let vm = this
 
         $scope.$watch(() => $rootScope.windowSize, onResize)

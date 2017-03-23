@@ -130,7 +130,7 @@ var gymList = function () {
 
     _createClass(gymList, [{
         key: 'controller',
-        value: function controller(fetcherService) {
+        value: function controller() {
             var vm = this;
         }
     }]);
@@ -199,10 +199,10 @@ var rtContent = function () {
     }
 
     _createClass(rtContent, [{
-        key: "controller",
+        key: 'controller',
         value: function controller() {
             var vm = this;
-            vm.tagline = "Hey! You've made it!";
+            vm.tagline = 'Hey! You\'ve made it!';
         }
     }]);
 
@@ -268,12 +268,14 @@ var rtSidebar = function () {
     function rtSidebar() {
         _classCallCheck(this, rtSidebar);
 
-        this.templateUrl = '/templates/rtSidebar'; //`<app-header></app-header><span><h1>{{$ctrl.tagline}}</h1></span>`
+        this.templateUrl = '/templates/rtSidebar';
     }
 
     _createClass(rtSidebar, [{
         key: 'controller',
         value: function controller($scope, $rootScope, $window) {
+            'ngInject';
+
             var vm = this;
 
             $scope.$watch(function () {
@@ -379,7 +381,7 @@ function setScreen() {
     return {
         restrict: 'A',
         scope: {},
-        controller: function controller($rootScope, $window) {
+        controller: ['$rootScope', '$window', function ($rootScope, $window) {
             var breakpoints = [0, 768, 992, 1200, Infinity];
             var labels = ['xs', 'sm', 'md', 'lg'];
             $window.onresize = debounce(listener, 250);
@@ -414,7 +416,7 @@ function setScreen() {
             function between(a, b, c) {
                 return a >= b && a < c;
             }
-        }
+        }]
     };
 }
 
@@ -466,9 +468,9 @@ function states($stateProvider, $locationProvider) {
         name: 'rt.gyms',
         url: '/gyms',
         resolve: {
-            gyms: function gyms(fetcherService) {
+            gyms: ['fetcherService', function (fetcherService) {
                 return fetcherService.get('gyms');
-            }
+            }]
         },
         component: 'gymList'
 
@@ -500,6 +502,7 @@ exports.makeDirective = makeDirective;
 
 function makeComponent(ClassName) {
     var comp = new ClassName();
+    comp.controller.$inject;
     return comp;
 }
 

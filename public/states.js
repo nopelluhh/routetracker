@@ -11,9 +11,9 @@ export function states($stateProvider, $locationProvider) {
         name: 'rt.gyms',
         url: '/gyms',
         resolve: {
-            gyms: (fetcherService) => {
+            gyms: ['fetcherService', (fetcherService) => {
                 return fetcherService.get('gyms')
-            }
+            }]
         },
         component: 'gymList'
 
