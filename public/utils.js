@@ -7,8 +7,6 @@ function makeComponent(ClassName) {
 function makeDirective(ClassName) {
     let ddo = new ClassName()
 
-    directive.$inject = ddo.$inject
-
     function directive() {
         return ddo
     }

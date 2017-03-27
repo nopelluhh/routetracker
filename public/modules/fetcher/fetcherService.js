@@ -8,11 +8,6 @@ export function fetcherService($http) {
         get,
         create
     }
-
-    /**
-     * @param  {} resource path to the resource not including a leading slash
-     * @param  {} params object to be mapped to query parameters
-     */
     
     function get(resource, params) {
         return $http.get(prefix + resource + paramToQuery(params))

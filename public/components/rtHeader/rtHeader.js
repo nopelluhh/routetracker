@@ -3,7 +3,7 @@ class rtHeader {
         this.template = require('./rtHeader.html')
     }
 
-    controller($element) {
+    /*ngInject*/ controller($element) {
         'ngInject'
         let vm = this
         let menu = $element.find('div')[1]

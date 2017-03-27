@@ -45,10 +45,8 @@ module.exports = {
                     loader: 'babel-loader',
                     options: {
                         presets: ['latest']
-                    },
+                    }
 
-                }, {
-                    loader: 'ng-annotate-loader'
                 }]
             }, {
                 test: /\.scss$/,
@@ -72,6 +70,14 @@ module.exports = {
             }, {
                 test: /\.html$/,
                 loader: 'raw-loader'
+            }, 
+            
+            //post loaders
+            {
+                test: /\.js$/,
+                exclude: /(node_modules|public\/libs)/,
+                loader: 'ng-annotate-loader?single_quotes',
+                enforce: 'post' 
             }
         ]
     }

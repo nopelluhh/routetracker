@@ -3,7 +3,7 @@ class rtWizard {
         this.template = require('./rtWizard.html')
     }
 
-    controller($element) {
+    controller() {
         'ngInject'
         let vm = this
 
