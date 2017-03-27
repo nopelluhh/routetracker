@@ -1,10 +1,18 @@
 class rtHeader {
     constructor() {
-        this.templateUrl = '/templates/rtHeader'
+        this.template = require('./rtHeader.html')
     }
 
-    controller() {
+    controller($element) {
+        'ngInject'
         let vm = this
+        let menu = $element.find('div')[1]
+
+        
+        $element.find('button').on('click', () => {
+            menu.classList.toggle('collapse')
+        })
+
 
         vm.menu = [
             { name: 'Gyms' },

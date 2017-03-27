@@ -16,7 +16,10 @@ export function states($stateProvider, $locationProvider) {
             }]
         },
         component: 'gymList'
-
+    }, {
+        name: 'rt.wizard',
+        url: '/add',
+        component: 'rtWizard'
     }]
 
     states.forEach((state) => {

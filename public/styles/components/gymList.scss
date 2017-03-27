@@ -1,0 +1,37 @@
+.gym-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.gym-item {
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    min-height: 200px;
+    margin-bottom: 40px;
+    transition: all 0.2s ease-in;
+    text-align: center;
+    border-radius: 5px;
+    flex: 0;
+    &:hover {
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    }
+    min-width: 100%;
+    @media (min-width: 500px) {
+        min-width: 45%
+    }
+    @media (min-width: $screen-sm - 1) {
+        min-width: 30%;
+    }
+}
+
+.gym-title {
+    color: black;
+    display: inline-block;
+    padding: 0 10px;
+    margin: 10px 0;
+    font-size: 2em;
+}
+.gym-preview {
+    min-height: 210px;
+}

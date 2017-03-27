@@ -12,9 +12,8 @@ const Boulder = new Schema({
         type: String
     },
     gym: {
-        type: String
-        // type: Schema.Types.ObjectId,
-        // ref: 'gym'
+        type: Schema.Types.ObjectId,
+        ref: 'gym'
     },
     wall: {
         type: String

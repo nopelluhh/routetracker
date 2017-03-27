@@ -4,10 +4,16 @@ module.exports = gymService
 
 function gymService() {
     return {
-        getAll
+        getMany,
+        create
     }
 
-    function getAll(queryCondition) {
-        return gym.find()
+    function getMany(queryCondition = {}) {
+        return gym.find(queryCondition)
+    }
+
+    function create(req) {
+        let temp = new gym(req.body)
+        return temp.save()
     }
 }

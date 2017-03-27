@@ -22,6 +22,12 @@ module.exports = {
             }
         }), extractSass
     ],
+    resolve: {
+        alias: {
+            Pub: path.resolve(__dirname, 'public'),
+            mod: path.resolve(__dirname, 'public/modules')
+        }
+    },
     module: {
         rules: [
             // preloaders

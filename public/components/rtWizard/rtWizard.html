@@ -1,0 +1,31 @@
+<div class="wz-big-container">
+    <div class="left-wing"></div>
+    <div class="wz-container">
+        <div class="wz-inner" ng-swipe-left="$ctrl.swipeContainer(1)" ng-swipe-right="$ctrl.swipeContainer(-1)">
+            <div class="wz-item">
+                <div class="text-center h3">Route Color:</div>
+                <div class="wz-grid">
+                    <div class="wz-dot" ng-repeat="(key, value) in $ctrl.colors" ng-style="{'background-color': value}" ng-click="$ctrl.addProp({color: key})">
+                    </div>
+                </div>
+            </div>
+            <div class="wz-item">
+                <div class="text-center h3">Route Grade:</div>
+                <div class="wz-grid">
+                    <div class="wz-dot" ng-repeat="grade in $ctrl.grades" ng-click="$ctrl.addProp({grade: grade})">
+                        <div class="wz-label grid-label text-muted">{{grade}}</div>
+                    </div>
+                </div>
+            </div>
+            <div class="wz-item">
+                <div class="text-center h3">Route Location:</div>
+                <div class="wz-grid">
+                    <div class="wz-list-item" ng-repeat="location in $ctrl.locations" ng-click="$ctrl.addProp({location: location})">
+                        <div class="wz-label list-label">{{location}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="right-wing"></div>
+</div>

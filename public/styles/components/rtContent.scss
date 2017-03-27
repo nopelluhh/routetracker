@@ -5,8 +5,10 @@
     padding-right: 45px;
     @media (min-width: 1000px) {
         width: 720px;
+        padding-left: 0px;
+        padding-right: 0px;
     }
-    @media (min-width: 1080px) {
+    @media (min-width: 1120px) {
         width: 800px;
     }
     @media (min-width: 1280px) {

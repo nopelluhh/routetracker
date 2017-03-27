@@ -1,8 +1,16 @@
 <nav class="nav navbar">
     <div class="nav navbar-header">
         <a href="#" class="navbar-brand">ROUTETRACKER</a>
+        <button type="button" class="navbar-toggle collapsed" id="hamburger">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="glyphicon glyphicon-menu-hamburger"></span>
+        </button>
     </div>
-    <ul class="nav navbar-nav navbar-left">
-        <li ng-repeat="item in $ctrl.menu"><a href="#">{{item.name}}</a></li>
-    </ul>
+
+    <div class="collapse navbar-collapse" id="menu">
+        <ul class="nav navbar-nav navbar-left">
+            <li ng-repeat="item in $ctrl.menu"><a href="#">{{item.name}}</a></li>
+        </ul>
+    </div>
+
 </nav>

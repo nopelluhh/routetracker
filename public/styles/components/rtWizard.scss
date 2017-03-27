@@ -1,0 +1,97 @@
+.wz-big-container {
+    display: flex;
+    overflow: hidden;
+}
+.wz-container {
+    max-width: 650px;
+    margin: auto;
+    flex-grow: 3
+}
+
+.wz-inner {
+    width: 400%;
+    z-index: 0;
+    left: 25px;
+    transition: all 0.3s ease-out;
+    transform: translateX(0);
+}
+
+.wz-item {
+    width: 23%;
+    float: left;
+    margin: 0 3% 0 1%
+}
+
+.wz-grid {
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between
+}
+
+.wz-list-item {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    @media (min-width: $screen-sm) {
+        width: 48%;
+    }
+}
+
+.wz-dot {
+    width: 30%;
+    height: auto;
+    border-radius: 25%;
+    margin-bottom: 5%;
+    &:after {
+        content: "";
+        display: block;
+        padding-top: 100%;
+    }
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.wz-label {
+    position: relative;
+    float: left;
+    width: 100%;
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.list-label {
+    font-size: 1.8rem;
+}
+
+.grid-label {
+    font-size: 3em;
+}
+
+.label-svg {
+    max-height: 3em;
+    width: 100%;
+    margin: auto;
+    vertical-align: top;
+}
+
+.left-wing {
+    height: 500px;
+    float: left;
+    position: relative;
+    z-index: 100;
+    background: linear-gradient(to right,  white,hsla(0, 0, 1, 0));
+    flex-grow: 1
+}
+
+.right-wing {
+    height: 500px;
+    top: 0px;
+    float: right;
+    position: relative;
+    z-index: 100;
+    background: linear-gradient(to left,  white,hsla(0, 0, 1, 0));
+    flex-grow: 1
+}
