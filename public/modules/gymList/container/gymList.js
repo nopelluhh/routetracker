@@ -1,16 +1,12 @@
-class gymList {
+export default class gymList {
     constructor() {
-        this.templateUrl = '/templates/gymList'
+        this.template = require('./gymList.html')
         this.bindings =  {
             gyms: '<'
         }
     }
 
     controller() {
-        let vm = this
     }
 }
 
-export {
-    gymList
-}

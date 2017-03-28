@@ -1,6 +1,6 @@
-class rtSidebar {
+export default class rtSidebar {
     constructor() {
-        this.templateUrl = '/templates/rtSidebar' 
+        this.template = require('./rtSidebar.html')
     }
 
     controller($scope, $rootScope, $window) {
@@ -27,7 +27,4 @@ class rtSidebar {
             } 
         }
     }
-}
-export {
-    rtSidebar
 }

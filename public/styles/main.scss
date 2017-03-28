@@ -1,5 +1,5 @@
 @import './bootstrap.scss';
-@import url('https://fonts.googleapis.com/css?family=Dosis:300,800');
+@import url('https://fonts.googleapis.com/css?family=Dosis:300,500');
 @import './components/*';
 @import './_util.scss';
 
@@ -10,6 +10,10 @@
     &:hover {
         color: $brand-primary;
     }
+}
+
+.font-alt {
+    font-family: 'Dosis';
 }
 
 .navbar-nav {

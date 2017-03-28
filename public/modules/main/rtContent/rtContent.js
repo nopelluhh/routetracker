@@ -1,14 +1,10 @@
-class rtContent {
+export default class rtContent {
     constructor() {
-        this.templateUrl = '/templates/rtContent'
+        this.template = require('./rtContent.html')
     }
 
     controller() {
         let vm = this
         vm.tagline = 'Hey! You\'ve made it!'
     }
-}
-
-export {
-    rtContent
 }

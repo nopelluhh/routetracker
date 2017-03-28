@@ -1,4 +1,4 @@
-class rtWizard {
+export default class rtWizardContainer {
     constructor() {
         this.template = require('./rtWizard.html')
     }
@@ -44,14 +44,14 @@ class rtWizard {
 
         function _addProp(obj) {
             route = Object.assign(route, obj)
-            if (steps[step] === Object.keys(obj)[0]) _moveContainer(1)
+            if (steps[step] === Object.keys(obj)[0] && !route[steps[step + 1]]) _moveContainer(1)
         }
 
         function _addTag(event, tag) {
             vm.route.tags = vm.route.tags || []
             let targ = event.currentTarget
             targ.classList.toggle('tag-selected')
-            if(vm.route.tags.includes(tag)) {
+            if (vm.route.tags.includes(tag)) {
                 vm.route.tags.filter(t => t != tag)
             } else {
                 vm.route.tags.push(tag)
@@ -59,8 +59,8 @@ class rtWizard {
         }
 
         function _moveContainer(count) {
-            if (count > 0 && cantMove()) return
-            step = step + count
+            if ((count > 0 && cantMove()) || (count < 0 && step === 0)) return false
+            step = step + count 
             container.style.transform = `translateX(${(step) * -20}%)`
         }
 
@@ -68,7 +68,4 @@ class rtWizard {
             return !(steps[step] in route)
         }
     }
-}
-export {
-    rtWizard
 }

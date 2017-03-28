@@ -1,4 +1,4 @@
-export class rtRoute {
+export default class rtRoute {
     constructor() {
         this.template = require('./rtRoute.html')
         this.bindings = {

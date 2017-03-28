@@ -16,7 +16,8 @@ function makeDirective(ClassName) {
 
 const π = (function() {
     return {
-        countBy
+        countBy,
+        buckets
     }
 
     function countBy(arr, comp) {
@@ -31,6 +32,23 @@ const π = (function() {
             }
         }
         return grouped
+    }
+
+    function buckets(arr, list) {
+        if (typeof list === 'string') list = list.split(' ')
+        if (list instanceof Array) list = makeHash(list, 0)
+        for (let i = 0, l = arr.length; i < l; i++) {
+            list[arr[i]]++
+        }
+        return list
+    }
+
+    function makeHash(arr, val) {
+        let hash = {}
+        for (let i = 0, l = arr.length; i < l; i++) {
+            hash[arr[i]] = arguments[1] || val
+        }
+        return hash
     }
 })()
 

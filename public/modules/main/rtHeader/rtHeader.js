@@ -1,4 +1,4 @@
-class rtHeader {
+export default class rtHeader {
     constructor() {
         this.template = require('./rtHeader.html')
     }
@@ -20,8 +20,4 @@ class rtHeader {
             { name: 'Today', sref: 'rt.wizard' }
         ]
     }
-}
-
-export {
-    rtHeader
 }
