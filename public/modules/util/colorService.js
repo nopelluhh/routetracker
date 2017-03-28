@@ -4,6 +4,7 @@ export default function colorFactory() {
     }
 
     function textColor(color) {
+        if(!color) return
         let splitter = color.length > 4? /.{2}/g : /./g
         let middle = color.length > 4? 128 : 8
         color = color.replace('#', '').match(splitter)

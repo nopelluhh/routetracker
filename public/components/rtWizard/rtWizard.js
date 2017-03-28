@@ -59,7 +59,7 @@ class rtWizard {
         }
 
         function _moveContainer(count) {
-            if (cantMove()) return
+            if (count > 0 && cantMove()) return
             step = step + count
             container.style.transform = `translateX(${(step) * -20}%)`
         }

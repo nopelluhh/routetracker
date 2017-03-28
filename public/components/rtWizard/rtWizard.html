@@ -6,7 +6,7 @@
                 <div class="text-center h3">Route Color:</div>
                 <div class="wz-grid">
                     <div class="wz-dot" ng-repeat="c in $ctrl.colors" ng-style="{'background-color': c.color}" ng-click="$ctrl.addProp({color: c})">
-                        <div class="wz-label grid-label" ng-style="{color: c.text}">{{c.name}}</div>
+                        <div class="wz-label grid-label hidden-xs hidden-sm" ng-style="{color: c.text}">{{c.name}}</div>
                     </div>
                 </div>
             </div>

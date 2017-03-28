@@ -12,7 +12,7 @@ export class rtBarChart {
 
     link(scope, elem) {
         var data = scope.data || [0]
-        if (scope.data.then) {
+        if (scope.data && scope.data.then) {
             scope.data.then(data => draw(data))
         } else {
             draw(data)

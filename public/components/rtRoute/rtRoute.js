@@ -7,6 +7,7 @@ export class rtRoute {
     }
 
     controller(color) {
+        'ngInject'
         let vm = this
         vm.textColor = color.textColor
         vm.loading = false
