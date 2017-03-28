@@ -1,14 +1,10 @@
 import angular from 'angular'
 import 'angular-touch'
-import { makeComponent } from './utils.js'
-import { states } from './states'
 
 // dependencies
 import 'angular-ui-router'
 
 // submodules
-
-import './modules/fetcher/fetcher'
 import './modules/util/util'
 import './modules/rtChart/rtChart'
 import './modules/rtWizard/rtWizard'
@@ -16,14 +12,16 @@ import './modules/gymList/gymList'
 import './modules/main/main'
 
 // config 
+import { states } from './states'
 
-// main components
+// services
+
+import fetcher from './services/fetcher'
 
 // dependencies
 
 const deps = [
     'ui.router',
-    'fetcher',
     'util',
     'rtChart',
     'rtWizard',
@@ -32,15 +30,9 @@ const deps = [
     'main'
 ]
 
-const app = angular.module('app', deps)
-
-//components
-    .component('dummy', { template: '' })
-
-
-    // services 
-
-
+const app = angular.module('rt', deps)
+    // services
+    .factory('fetcher', fetcher) 
     // config
 
     .config(states)

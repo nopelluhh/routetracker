@@ -1,7 +1,8 @@
-fetcherService.$inject = ['$http']
+fetcher.$inject = ['$http']
 
-export function fetcherService($http) {
+export default function fetcher($http) {
     const prefix = '/api/'
+    
     return {
         get,
         create

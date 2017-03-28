@@ -7,6 +7,5 @@ export class rtTooltip {
 
     link(scope, element, attr, barChart) {
         barChart
-        console.log(barChart)
     }
 }
