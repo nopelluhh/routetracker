@@ -15,9 +15,9 @@ class rtHeader {
 
 
         vm.menu = [
-            { name: 'Gyms' },
-            { name: 'Overview' },
-            { name: 'Today' }
+            { name: 'Gyms', sref: 'rt.gyms' },
+            { name: 'Overview', sref: 'rt' },
+            { name: 'Today', sref: 'rt.wizard' }
         ]
     }
 }

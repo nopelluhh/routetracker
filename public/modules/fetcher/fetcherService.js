@@ -1,5 +1,3 @@
-
-
 fetcherService.$inject = ['$http']
 
 export function fetcherService($http) {

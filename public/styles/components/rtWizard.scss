@@ -5,11 +5,12 @@
 .wz-container {
     max-width: 650px;
     margin: auto;
-    flex-grow: 3
+    flex-grow: 3;
+    color: $gray;
 }
 
 .wz-inner {
-    width: 400%;
+    width: 500%;
     z-index: 0;
     left: 25px;
     transition: all 0.3s ease-out;
@@ -17,9 +18,9 @@
 }
 
 .wz-item {
-    width: 23%;
+    width: 20%;
     float: left;
-    margin: 0 3% 0 1%
+    padding: 0 2%
 }
 
 .wz-grid {
@@ -30,10 +31,11 @@
 }
 
 .wz-list-item {
+    position: relative;
     width: 100%;
-    height: auto;
+    height: 40px;
     border-radius: 10px;
-    margin-bottom: 5%;
+    margin-bottom: 4%;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     @media (min-width: $screen-sm) {
         width: 48%;
@@ -41,6 +43,7 @@
 }
 
 .wz-dot {
+    position: relative;
     width: 30%;
     height: auto;
     border-radius: 25%;
@@ -54,7 +57,7 @@
 }
 
 .wz-label {
-    position: relative;
+    position: absolute;
     float: left;
     width: 100%;
     text-align: center;
@@ -78,20 +81,24 @@
 }
 
 .left-wing {
-    height: 500px;
+    height: 100vh;
     float: left;
     position: relative;
     z-index: 100;
-    background: linear-gradient(to right,  white,hsla(0, 0, 1, 0));
+    background: linear-gradient(to right,  white,rgba(255, 255, 255, 0));
     flex-grow: 1
 }
 
 .right-wing {
-    height: 500px;
+    height: 100vh;
     top: 0px;
     float: right;
     position: relative;
     z-index: 100;
-    background: linear-gradient(to left,  white,hsla(0, 0, 1, 0));
+    background: linear-gradient(to left,  white,rgba(255, 255, 255, 0));
     flex-grow: 1
+}
+
+.tag-selected {
+    background-color: $gray-light;
 }

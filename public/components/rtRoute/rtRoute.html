@@ -1,0 +1,6 @@
+<ul class="rt-route">
+    <li>Color: <span class="label label-default bs10" ng-style="{'background-color': $ctrl.route.color.color, color: $ctrl.textColor($ctrl.route.color.color)}">{{$ctrl.route.color.name}}</span></li>
+    <li>Grade: {{$ctrl.route.grade}}</li>
+    <li>Location: {{$ctrl.route.location}}
+    <li>Tags: <span class="label label-default mr10" ng-repeat="tag in $ctrl.route.tags">{{tag}}</span>
+</ul>

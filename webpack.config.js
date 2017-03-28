@@ -51,14 +51,14 @@ module.exports = {
             }, {
                 test: /\.scss$/,
                 use: extractSass.extract({
-                    use: [{
-                        loader: 'css-loader'
-                    }, {
-                        loader: 'sass-loader',
-                        options: {
-                            includePaths: [path.resolve(__dirname, './node_modules')]
+                    use: ['css-loader',
+                        {
+                            loader: 'sass-loader',
+                            options: {
+                                includePaths: [path.resolve(__dirname, './node_modules')]
+                            }
                         }
-                    }]
+                    ]
                 })
             }, {
                 test: /\.woff[2]?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
@@ -70,14 +70,14 @@ module.exports = {
             }, {
                 test: /\.html$/,
                 loader: 'raw-loader'
-            }, 
-            
+            },
+
             //post loaders
             {
                 test: /\.js$/,
                 exclude: /(node_modules|public\/libs)/,
                 loader: 'ng-annotate-loader?single_quotes',
-                enforce: 'post' 
+                enforce: 'post'
             }
         ]
     }

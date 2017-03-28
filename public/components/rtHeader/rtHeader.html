@@ -9,7 +9,7 @@
 
     <div class="collapse navbar-collapse" id="menu">
         <ul class="nav navbar-nav navbar-left">
-            <li ng-repeat="item in $ctrl.menu"><a href="#">{{item.name}}</a></li>
+            <li ng-repeat="item in $ctrl.menu"><a ui-state="item.sref">{{item.name}}</a></li>
         </ul>
     </div>
 
