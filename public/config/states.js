@@ -1,4 +1,6 @@
-export function states($stateProvider, $locationProvider) {
+states.$inject = ['$stateProvider', '$locationProvider']
+
+export default function states($stateProvider, $locationProvider) {
     const states = [{
         name: 'rt',
         abstract: true,
@@ -6,7 +8,7 @@ export function states($stateProvider, $locationProvider) {
     }, {
         name: 'rt.bouldering',
         url: '/',
-        component: 'dummy'
+        template: ''
     }, {
         name: 'rt.gyms',
         url: '/gyms',
@@ -29,4 +31,4 @@ export function states($stateProvider, $locationProvider) {
     $locationProvider.html5Mode(true)
 }
 
-states.$inject = ['$stateProvider', '$locationProvider']
+

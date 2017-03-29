@@ -1,5 +1,5 @@
 import angular from 'angular'
-import { makeDirective } from 'Pub/utils.js'
+import { makeDirective } from 'rt/util'
 
 import { rtBarChart } from './rtBarChart'
 import { rtTooltip } from './rtTooltip'

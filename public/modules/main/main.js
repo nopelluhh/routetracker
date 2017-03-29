@@ -1,5 +1,5 @@
 import angular from 'angular'
-import { makeComponent } from 'Pub/utils.js'
+import { makeComponent } from 'rt/util'
 
 import main from './main/main'
 import rtHeader from './rtHeader/rtHeader'

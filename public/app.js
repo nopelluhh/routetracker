@@ -1,8 +1,7 @@
-import angular from 'angular'
-import 'angular-touch'
-
 // dependencies
+import angular from 'angular'
 import 'angular-ui-router'
+import 'angular-touch'
 
 // submodules
 import './modules/util/util'
@@ -12,15 +11,12 @@ import './modules/gymList/gymList'
 import './modules/main/main'
 
 // config 
-import { states } from './states'
+import states from './config/states'
 
 // services
-
 import fetcher from './services/fetcher'
 
-// dependencies
-
-const deps = [
+const app = angular.module('rt', [
     'ui.router',
     'util',
     'rtChart',
@@ -28,13 +24,11 @@ const deps = [
     'ngTouch',
     'rtGymList',
     'main'
-]
-
-const app = angular.module('rt', deps)
+])
     // services
-    .factory('fetcher', fetcher) 
+    .factory('fetcher', fetcher)
+    
     // config
-
     .config(states)
 
 export default app

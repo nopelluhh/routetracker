@@ -1,5 +1,5 @@
 import angular from 'angular'
-import { makeComponent } from 'Pub/utils.js'
+import { makeComponent } from 'rt/util'
 
 import rtWizardContainer from './container/rtWizardContainer'
 import wzPage from './wzPage/wzPage'

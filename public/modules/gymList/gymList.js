@@ -1,5 +1,5 @@
 import angular from 'angular'
-import { makeComponent } from 'Pub/utils.js'
+import { makeComponent } from 'rt/util'
 
 import gymList from './container/gymList'
 import gymItem from './gymItem/gymItem'

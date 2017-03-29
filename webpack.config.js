@@ -24,7 +24,7 @@ module.exports = {
     ],
     resolve: {
         alias: {
-            Pub: path.resolve(__dirname, 'public'),
+            rt: path.resolve(__dirname, 'public'),
             mod: path.resolve(__dirname, 'public/modules')
         }
     },
