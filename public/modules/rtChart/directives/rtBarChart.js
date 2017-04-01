@@ -27,8 +27,8 @@ export class rtBarChart {
 
         function draw(data) {
             // var width = parseInt(d3.select('#chart').style('width'), 10)
-            var width = (scope.width || 500)
-            var height = (scope.height || 200)
+            var width = Number(scope.width) || 500
+            var height = Number(scope.height) || 200
             var barWidth = width / data.length
 
             var y = d3.scaleLinear()

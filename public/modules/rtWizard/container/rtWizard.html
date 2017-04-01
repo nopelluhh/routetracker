@@ -3,11 +3,30 @@
     <div class="wz-container">
         <div class="wz-inner" ng-swipe-left="$ctrl.moveContainer(1)" ng-swipe-right="$ctrl.moveContainer(-1)">
             <div class="wz-item">
-                <div class="text-center h3">Route Color:</div>
+                <div class="text-center h3">Choose Gym</div>
                 <wz-page next="$ctrl.moveContainer(1)"></wz-page>
                 <div class="wz-grid">
-                    <div class="wz-dot" ng-repeat="c in $ctrl.colors" ng-style="{'background-color': c.color}" ng-click="$ctrl.addProp({color: c})">
-                        <div class="wz-label grid-label hidden-xs hidden-sm em2" ng-style="{color: c.text}">{{c.name}}</div>
+                    <div class="wz-list-item" ng-class="{'item-selected': $ctrl.gymFilter === 'boulder'}">
+                        <div class="wz-label list-label"  ng-click="$ctrl.filterGyms('boulder')">Bouldering</div>
+                    </div>
+                    <div class="wz-list-item" ng-class="{'item-selected': $ctrl.gymFilter === 'rope'}">
+                        <div class="wz-label list-label" ng-click="$ctrl.filterGyms('rope')">Ropes</div>
+                    </div>
+                </div>
+                <hr>
+                <div class="wz-grid">
+                    <div class="wz-list-item" ng-class="{'item-selected': $ctrl.route.gym.name === gym.name}" ng-repeat="gym in $ctrl.gymList track by $index" ng-click="$ctrl.addProp({gym: $ctrl.gymList[$index]})">
+                        <div class="wz-label list-label">{{gym.name}}</div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="wz-item">
+                <div class="text-center h3">Route Color:</div>
+                <wz-page prev="$ctrl.moveContainer(-1)" next="$ctrl.moveContainer(1)"></wz-page>
+                <div class="wz-grid">
+                    <div class="wz-dot" ng-class="{'item-selected': $ctrl.route.color.name === c.name}" ng-repeat="c in $ctrl.colors" ng-style="{'background-color': c.color}" ng-click="$ctrl.addProp({color: c})">
+                        <div class="wz-label list-label hidden-xs hidden-sm em2" ng-style="{color: c.text}">{{c.name}}</div>
                     </div>
                 </div>
             </div>
@@ -15,7 +34,7 @@
                 <div class="text-center h3">Route Grade:</div>
                 <wz-page prev="$ctrl.moveContainer(-1)" next="$ctrl.moveContainer(1)"></wz-page>
                 <div class="wz-grid">
-                    <div class="wz-dot" ng-class="{'tag-selected': $ctrl.route.grade === grade}" ng-repeat="grade in $ctrl.grades" ng-click="$ctrl.addProp({grade: grade})">
+                    <div class="wz-dot" ng-class="{'item-selected': $ctrl.route.grade === grade}" ng-repeat="grade in $ctrl.grades" ng-click="$ctrl.addProp({grade: grade})">
                         <div class="wz-label grid-label font-alt">{{grade}}</div>
                     </div>
                 </div>
@@ -25,7 +44,7 @@
                 <div class="text-center h3">Route Location:</div>
                 <wz-page prev="$ctrl.moveContainer(-1)" next="$ctrl.moveContainer(1)"></wz-page>
                 <div class="wz-grid">
-                    <div class="wz-list-item" ng-class="{'tag-selected': $ctrl.route.location === location}" ng-repeat="location in $ctrl.locations" ng-click="$ctrl.addProp({location: location})">
+                    <div class="wz-list-item" ng-class="{'item-selected': $ctrl.route.location === location}" ng-repeat="location in $ctrl.locations" ng-click="$ctrl.addProp({location: location})">
                         <div class="wz-label list-label">{{location}}</div>
                     </div>
                 </div>
@@ -35,7 +54,6 @@
             <div class="wz-item">
                 <div class="text-center h3">Route Tags:</div>
                 <wz-page prev="$ctrl.moveContainer(-1)" next="$ctrl.moveContainer(1)"></wz-page>
-                <p ng-click="$ctrl.moveContainer(1)">Next</p>
                 <div class="wz-grid">
                     <div class="wz-list-item" ng-repeat="tag in $ctrl.tags" ng-click="$ctrl.addTag($event, tag)">
                         <div class="wz-label list-label">{{tag}}</div>
@@ -44,9 +62,15 @@
             </div>
             <div class="wz-item">
                 <div class="text-center h3">Review:</div>
-                <wz-page prev="$ctrl.moveContainer(-1)"></wz-page>
-                <div class="wz-grid">
-                    <rt-route route="$ctrl.route"></rt-route>
+                <div ng-show="!$ctrl.route.color">
+                    <button class="btn btn-primary center-block" ng-click="$ctrl.moveContainer(-4)">New Route</button>
+                </div>
+                <div ng-show="$ctrl.route.color">
+                    <wz-page prev="$ctrl.moveContainer(-1)"></wz-page>
+                    <div><button class="btn btn-success center-block" ng-click="$ctrl.submit()">Add Route</button></div>
+                    <div class="wz-grid">
+                        <rt-route route="$ctrl.route"></rt-route>
+                    </div>
                 </div>
             </div>
         </div>

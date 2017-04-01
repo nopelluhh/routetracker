@@ -6,23 +6,9 @@ const Gym = new Schema({
         type: String,
         require: true
     },
-    routes: {
-        type: [Schema.Types.ObjectId],
-        ref: 'routes'
-    },
-    boulders: {
-        type: [Schema.Types.ObjectId],
-        ref: 'boulder'
-    },
     walls: {
-        rope: [{
-            type: Schema.Types.ObjectId,
-            ref: 'wall'
-        }],
-        boulder: [{
-            type: Schema.Types.ObjectId,
-            ref: 'wall'
-        }]
+        rope: [String],
+        boulder: [String]
     }
 })
 

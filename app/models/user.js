@@ -11,6 +11,10 @@ const User = new Schema({
         type: [Schema.Types.ObjectId],
         ref: 'gym'
     },
+    team: {
+        type: Schema.Types.ObjectId,
+        ref: 'team'        
+    },
     roles: [{
         type: String,
         enum: ['setter', 'head', 'admin']

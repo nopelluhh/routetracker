@@ -19,7 +19,7 @@ const π = (function() {
         countBy,
         buckets
     }
-
+    
     function countBy(arr, comp) {
         if (!comp) comp = (a) => a
         let grouped = {}
@@ -44,9 +44,10 @@ const π = (function() {
     }
 
     function makeHash(arr, val) {
+        // return arr.reduce((acc, cur) => { acc[cur] = val; return acc}, {})
         let hash = {}
         for (let i = 0, l = arr.length; i < l; i++) {
-            hash[arr[i]] = arguments[1] || val
+            hash[arr[i]] = val
         }
         return hash
     }

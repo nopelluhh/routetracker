@@ -6,7 +6,7 @@ const Boulder = new Schema({
         type: String
     },
     grade: {
-        type: Number
+        type: String
     },
     color: {
         type: String

@@ -4,7 +4,20 @@ export default function states($stateProvider, $locationProvider) {
     const states = [{
         name: 'rt',
         abstract: true,
-        component: 'main'
+        component: 'main',
+        resolve: {
+            gyms: ['fetcher', '$rootScope', (fetcher, $rootScope) =>
+                fetcher.get('gyms').then(res => {
+                    $rootScope.gyms = res
+                })
+            ],
+            team: ['fetcher', '$rootScope', (fetcher, $rootScope) => 
+                fetcher.get('teams/current', {_id: '58de9650cc711738fe322fc1'})
+                .then(res => {
+                    $rootScope.team = res
+                })
+            ]
+        },
     }, {
         name: 'rt.bouldering',
         url: '/',
@@ -30,5 +43,3 @@ export default function states($stateProvider, $locationProvider) {
 
     $locationProvider.html5Mode(true)
 }
-
-

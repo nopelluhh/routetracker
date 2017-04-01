@@ -8,7 +8,7 @@ function boulderService() {
     }
 
     function getMany(queryCondition = {}) {
-        let populate = Object.keys(queryCondition).join(' ')
-        return boulder.find(queryCondition).populate(populate)
+        // let populate = Object.keys(queryCondition).join(' ')
+        return boulder.find(queryCondition) //.populate(populate)
     }
 }

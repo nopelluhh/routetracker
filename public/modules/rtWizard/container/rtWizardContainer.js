@@ -3,69 +3,109 @@ export default class rtWizardContainer {
         this.template = require('./rtWizard.html')
     }
 
-    controller(color) {
+    controller(color, fetcher, $rootScope) {
         'ngInject'
-        let vm = this
+        let vm = this,
+            clicks = 0,
+            clicked = '',
+            clickedTag = ''
+
 
         vm.addProp = _addProp
         vm.addTag = _addTag
-        vm.textColor = color.textColor
         vm.moveContainer = _moveContainer
+        vm.submit = _submit
+        vm.filterGyms = _filterGyms
+        vm.route = { tags: []}
+        vm.textColor = color.textColor
 
-        let route = vm.route = {}
-        let container
-        let step = 0
-        let steps = ['color', 'grade', 'location', 'tags']
-        activate()
 
-        vm.colors = [
-            { name: 'red', color: '#e22' },
-            { name: 'orange', color: '#f80' },
-            { name: 'yellow', color: '#ee0' },
-            { name: 'green', color: '#0b0' },
-            { name: 'blue', color: '#00e' },
-            { name: 'purple', color: '#808' },
-            { name: 'black', color: '#000' },
-            { name: 'white', color: '#fff' },
-            { name: 'pink', color: '#e5d' }
-        ]
-
-        vm.colors.forEach(c => c.text = color.textColor(c.color))
-
-        vm.grades = ['V0', 'V1', 'V2', 'V3', 'V4', 'V5', 'V6', 'V7', 'V8', 'V9', 'V10', 'V11', 'V12', ]
+        let container,
+            step = 0,
+            steps = ['gym', 'color', 'grade', 'location', 'tags']
+        
+        // temp data 
 
         vm.locations = ['Wavy Gravy', 'Barrel', 'Horseshoe Left', 'Horseshoe Right', 'Prow', 'Wave Left', 'Wave Right', 'Cap\s Corner', 'Alcove']
 
-        vm.tags = ['Techy', 'Burly', 'Compy', 'Commercial', 'Funky']
+        this.$onInit = activate()
 
         function activate() {
             container = document.querySelector('.wz-inner')
+            vm.gymList = vm.gyms = $rootScope.gyms //vm.gyms
+            vm.tags = $rootScope.team.tags
+            vm.colors = $rootScope.team.colors
+            vm.grades = $rootScope.team.grades
+            vm.colors.forEach(c => c.text = color.textColor(c.color))
         }
 
+        // component actions
+
         function _addProp(obj) {
-            route = Object.assign(route, obj)
-            if (steps[step] === Object.keys(obj)[0] && !route[steps[step + 1]]) _moveContainer(1)
+            let prop = Object.keys(obj)[0]
+
+            //handle double click
+            if (clicks > 0 && clicked === obj[prop]) return _moveContainer(1)
+            let targ = event.currentTarget
+            targ.classList.toggle('item-selected')
+            vm.route = Object.assign(vm.route, obj)
+            if (steps[step] === prop && !vm.route[steps[step + 1]]) _moveContainer(1)
+            clicks++
+            clicked = obj[prop]
+            setTimeout(() => clicks--, 500)
         }
 
         function _addTag(event, tag) {
-            vm.route.tags = vm.route.tags || []
+            // handle double click
+            if (clicks > 0 && clickedTag === tag) return _moveContainer(1) 
+
+            //handle highlightin
             let targ = event.currentTarget
-            targ.classList.toggle('tag-selected')
+            targ.classList.toggle('item-selected')
             if (vm.route.tags.includes(tag)) {
-                vm.route.tags.filter(t => t != tag)
+                vm.route.tags = vm.route.tags.filter(t => t != tag)
             } else {
                 vm.route.tags.push(tag)
             }
+            clicks++
+            clickedTag = tag
+            setTimeout(() => clicks--, 1000)
         }
 
         function _moveContainer(count) {
             if ((count > 0 && cantMove()) || (count < 0 && step === 0)) return false
-            step = step + count 
-            container.style.transform = `translateX(${(step) * -20}%)`
+            step = step + count
+            container.style.transform = `translateX(${(step) * -16.6}%)`
+        }
+
+        function _submit() {
+            let route = Object.assign({}, vm.route)
+            route.color = route.color.name
+            fetcher.create('boulders', route)
+                .then(() => {
+                    reset()
+                })
+                .catch(alert)
+        }
+
+        function _filterGyms(field) {
+            if (field === vm.gymFilter) {
+                vm.gymList = vm.gyms
+                vm.gymFilter = undefined
+                return
+            }
+            vm.gymList = vm.gyms.filter(gym => gym.walls[field].length > 0)
+            vm.gymFilter = field
+        }
+
+        // internal functions
+
+        function reset() {
+            vm.route = {}
         }
 
         function cantMove() {
-            return !(steps[step] in route)
+            return !(steps[step] in vm.route)
         }
     }
 }
